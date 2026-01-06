@@ -60,12 +60,9 @@ profile.log("Привет, мир!", "a")
 Менеджер для работы с несколькими профилями.
 
 **Методы**:
-1. ```create_profile(name="user", password="")``` - создает новый профиль
+1. ```logUser(name="user", password="", flag="c")``` - создает новый профиль
 
-2. ```login_profile(name="user", password="")``` - авторизует существующий профиль
-
-3. ```logUser(name="user", password="", flag="c")``` - совместимый метод (flag: "c" - создать, "i" - войти)
-
+2. ```logUser(name="user", password="", flag="i")``` - авторизует существующий профиль
 ## Класс ArtLogProfile (Профиль)
 Основной класс для работы с логированием.
 
@@ -124,7 +121,7 @@ from artlogs import ArtLogs
 manager = ArtLogs()
 
 # Создание профиля
-profile = manager.create_profile("DevUser", "dev123")
+profile = manager.logUser("DevUser", "dev123")
 
 # Изменение режима логирования
 profile.set_mod("e")  # Теперь будут выводиться только ошибки
@@ -146,9 +143,9 @@ from artlogs import ArtLogs
 manager = ArtLogs()
 
 # Создаем несколько профилей
-admin = manager.create_profile("Admin", "admin_pass")
-user1 = manager.create_profile("User1", "pass123")
-user2 = manager.create_profile("User2", "pass456")
+admin = manager.logUser("Admin", "admin_pass")
+user1 = manager.logUser("User1", "pass123")
+user2 = manager.logUser("User2", "pass456")
 
 # Логируем от разных пользователей
 admin.log("Система запущена", "a")
