@@ -30,10 +30,10 @@ from artlogs import ArtLogs
 manager = ArtLogs()
 
 # Создаем новый профиль
-profile = manager.create_profile("MyProfile", "secure_password")
+profile = manager.logUser("MyProfile", "secure_password")
 
 # Или авторизуем существующий
-# profile = manager.login_profile("MyProfile", "secure_password")
+# profile = manager.logUser("MyProfile", "secure_password", "i")
 
 # Логирование
 profile.log("Это информационное сообщение", "i")
@@ -230,3 +230,4 @@ colorama.init()  # Инициализация для Windows
 Na9ash1 (ArtProgsTeam)
 
 ###  ⭐ Если этот проект был полезен, поставьте звезду на GitHub!
+
